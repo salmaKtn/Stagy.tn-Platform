@@ -1,0 +1,33 @@
+<div class="cv-skills-card card">
+  <div class="card-header">
+    <h5 class="mb-0 p-0">
+      <button class="btn btn-link" (click)="collapseSkills.toggle()" [attr.aria-expanded]="!isCollapsed2"
+        aria-controls="skillsCollapse">Skills</button>
+    </h5>
+  </div>
+
+  <div class="collapse show" #collapseSkills="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+    <div class="skills-list">
+      <div class="skill-category">
+        <h6>Conception & Programming</h6>
+        <p>Python, Java, C, VB.NET, UML</p>
+      </div>
+      <div class="skill-category">
+        <h6>Databases & BI</h6>
+        <p>SQL, PL/SQL, MySQL, Talend ETL, Multidimensional Modeling, EDX/MDX</p>
+      </div>
+      <div class="skill-category">
+        <h6>Data Mining & AI</h6>
+        <p>scikit-learn, pandas, Recommender Engines, Machine Learning</p>
+      </div>
+      <div class="skill-category">
+        <h6>Web Development & Design</h6>
+        <p>HTML, CSS, JavaScript, PHP, CMS, Figma, SEO</p>
+      </div>
+      <div class="skill-category">
+        <h6>Tools & Others</h6>
+        <p>Excel, AppScript (Spreadsheets), BPMN & Business Processes, IoT (Cisco Packet Tracer)</p>
+      </div>
+    </div>
+  </div>
+</div>

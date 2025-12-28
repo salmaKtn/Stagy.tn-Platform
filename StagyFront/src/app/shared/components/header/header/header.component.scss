@@ -1,0 +1,74 @@
+.center-logo-wrapper {
+  display: flex;
+  flex: 1;
+}
+.center-logo-wrapper {
+  max-width: 400px; /* ou autre taille selon ta largeur dispo */
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+
+.center-logo {
+  height: 80px; /* Taille du logo */
+  width: auto;
+  
+}
+.header-wrapper {
+  /* hauteur fixe si tu veux */
+  height: 90px;
+  background: #fff;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 0.1);
+  padding-left: 15px;
+  padding-right: 15px;
+  /* garde un max de largeur, centrée */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-side, .nav-right {
+  min-width: 100px; /* pour que ça reste collé à gauche/droite */
+}
+
+.about-btn {
+  background-color: #5f1c5f;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  display: inline-block;
+}
+
+.about-btn:hover,
+.about-btn:focus {
+  background-color: #500e51;
+  box-shadow: 0 5px 10px rgba(77, 3, 100, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+.about-btn:active {
+  background-color: #004080;
+  box-shadow: 0 2px 4px rgba(0, 64, 128, 0.8);
+}
+.logo-wrapper {
+  margin-right: 4px; /* réduit l'espace à droite du logo */
+}
+
+app-search {
+  margin-left: 4px; /* supprime marge éventuelle à gauche du champ search */
+}
+
+.page-wrapper {
+  padding-top: 90px;
+}
+.center-logo-wrapper {
+  max-width: 400px; /* ou autre taille selon ta largeur dispo */
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}

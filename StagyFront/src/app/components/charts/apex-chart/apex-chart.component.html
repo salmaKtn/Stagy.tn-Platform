@@ -1,0 +1,43 @@
+<app-breadcrumb [title]="'Tableau de Bord'" [active_item]="'Tableau de Bord'"></app-breadcrumb>
+<div class="container-fluid">
+   <div class="row">
+    
+     <div class="col-sm-12 col-xl-6 box-col-6">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Distribution Offre-région </h5>
+         </div>
+         <app-bar-chart></app-bar-chart>
+       </div>
+     </div>
+     
+     
+    
+     <div class="col-sm-12 col-xl-6 box-col-6">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Compétences demandées en IT </h5>
+         </div>
+         <app-donut-chart></app-donut-chart>
+       </div>
+     </div>
+     <div class="col-sm-12 col-xl-12 box-col-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Offre - Demande </h5>
+         </div>
+         <app-mixed-chart></app-mixed-chart>
+       </div>
+     </div>
+     
+     <div class="col-sm-12 col-xl-6 box-col-6">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Radar Chart </h5>
+         </div>
+         <app-radar-chart></app-radar-chart>
+       </div>
+     </div>
+     
+   </div>
+ </div>

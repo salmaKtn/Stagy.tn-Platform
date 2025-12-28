@@ -1,0 +1,24 @@
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+td img {
+  object-fit: cover;
+}
+
+select.form-select.bg-warning {
+  border: none;
+}
+
+select.form-select.bg-success {
+  border: none;
+}
+
+select.form-select.bg-danger {
+  border: none;
+}
+
+select.form-select.bg-info {
+  border: none;
+}

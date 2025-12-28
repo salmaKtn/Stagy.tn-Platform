@@ -1,0 +1,123 @@
+$primary-color:rgb(79, 14, 106);
+$secondary-color:rgb(140, 140, 18);
+.cv-upcoming-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background: white;
+
+  .card-header {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    .btn-link {
+      color: #2c3e50;
+      font-weight: 600;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      font-size: 1.25rem;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .upcoming-course {
+    padding: 1.5rem 2rem;
+
+    .course-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .media-body {
+        flex: 1;
+
+        .course-title {
+          font-weight: 600;
+          color: $primary-color;
+          margin-bottom: 0.25rem;
+          font-size: 1.1rem;
+        }
+
+        p {
+          margin-bottom: 0.25rem;
+          font-size: 0.9rem;
+
+          a {
+            color: $secondary-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .course-date {
+        text-align: right;
+        color: $primary-color;
+        font-weight: 600;
+
+        h5 {
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+
+        span {
+          font-size: 0.8rem;
+          color: darken($primary-color, 15%);
+          display: block;
+        }
+      }
+    }
+  }
+
+  .additional-info {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+
+    .info-section {
+      margin-bottom: 1.25rem;
+
+      h6 {
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #555;
+      }
+
+      ul {
+        list-style: inside disc;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.25rem;
+          color: #444;
+          font-weight: 400;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}

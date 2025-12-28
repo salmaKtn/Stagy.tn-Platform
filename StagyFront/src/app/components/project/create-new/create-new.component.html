@@ -1,0 +1,169 @@
+<app-breadcrumb [title]="'Créer un Stage'" [items]="['Stage']" [active_item]="'Créer un Stage'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <form class="form theme-form projectcreate">
+
+            <!-- 🎯 SECTION OFFRE DE STAGE -->
+            <h5 class="mb-3">Offre De Stage</h5>
+
+            <div class="mb-3">
+              <label>Titre</label>
+              <input class="form-control" type="text" [(ngModel)]="offer.title" placeholder="ex: Développeur Web Stagiaire">
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4 mb-3">
+                <label>Localisation</label>
+                <input class="form-control" type="text" [(ngModel)]="offer.location" placeholder="Ville ou télétravail">
+              </div>
+              <div class="col-sm-4 mb-3">
+                <label>Type</label>
+                <select class="form-select" [(ngModel)]="offer.type">
+                  <option>À distance</option>
+                  <option>Hybride</option>
+                  <option>En présentiel</option>
+                </select>
+              </div>
+              <div class="col-sm-4 mb-3">
+                <label>Catégorie</label>
+                <select class="form-select" [(ngModel)]="offer.category">
+                  <option>PFE</option>
+                  <option>Été</option>
+                  <option>Pré-embauche</option>
+                  <option>Ouvrier</option>
+                  <option>Découverte</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4 mb-3">
+                <label>Gouvernorat</label>
+                <select class="form-select" [(ngModel)]="offer.governorate">
+                  <option *ngFor="let gov of governorates">{{ gov }}</option>
+                </select>
+              </div>
+
+              <div class="col-sm-4 mb-3">
+                <label>Date de début</label>
+                <input class="form-control" type="date" [(ngModel)]="offer.startDate">
+              </div>
+              <div class="col-sm-4 mb-3">
+                <label>Date de fin</label>
+                <input class="form-control" type="date" [(ngModel)]="offer.endDate">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4 mb-3">
+                <label>Durée</label>
+                <input class="form-control" type="text" [(ngModel)]="offer.duration" placeholder="ex: 2 mois">
+              </div>
+              <div class="col-sm-4 mb-3">
+                <label>Horaire</label>
+                <input class="form-control" type="text" [(ngModel)]="offer.workingHours" placeholder="ex: 9h-16h">
+              </div>
+              <div class="col-sm-4 mb-3">
+                <label>Rémunération (TND)</label>
+                <input class="form-control" type="number" [(ngModel)]="offer.payment" placeholder="ex: 500">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" rows="4" [(ngModel)]="offer.description" name="description" 
+                        placeholder="Description détaillée de l'offre de stage..."></textarea>
+            </div>
+
+            <hr class="mt-4 mb-4" />
+            <div class="mb-3">
+              <label>Rôles et responsabilités</label>
+              <textarea class="form-control" rows="3" [(ngModel)]="offer.Roles" placeholder="Liste des responsabilités du stagiaire..."></textarea>
+            </div>
+
+            <hr class="mt-4 mb-4" />
+
+            <!-- ✅ SECTION ÉLIGIBILITÉ -->
+            <h5 class="mb-3">Critères d'Éligibilité</h5>
+
+            <!-- Compétences -->
+            <div class="mb-3">
+              <label>Compétences requises (max 3)</label>
+              <input type="text" class="form-control" placeholder="Saisir et appuyer sur Entrée"
+                     (keydown.enter)="addTag($event, 'skills')" [disabled]="skills.length >= 3">
+              <div class="tags mt-2">
+                <span *ngFor="let tag of skills; let i = index" class="badge bg-primary me-1">
+                  {{ tag }}
+                  <button type="button" class="btn-close btn-close-white btn-sm ms-1" (click)="removeTag(i, 'skills')"></button>
+                </span>
+              </div>
+            </div>
+
+            <!-- Langues -->
+            <div class="mb-3">
+              <label>Langues (max 3)</label>
+              <input type="text" class="form-control" placeholder="Saisir et appuyer sur Entrée"
+                     (keydown.enter)="addTag($event, 'languages')" [disabled]="languages.length >= 3">
+              <div class="tags mt-2">
+                <span *ngFor="let tag of languages; let i = index" class="badge bg-success me-1">
+                  {{ tag }}
+                  <button type="button" class="btn-close btn-close-white btn-sm ms-1" (click)="removeTag(i, 'languages')"></button>
+                </span>
+              </div>
+            </div>
+
+            <!-- Domaines -->
+            <div class="mb-3">
+              <label>Domaines d'intérêt (max 3)</label>
+              <input type="text" class="form-control" placeholder="Saisir et appuyer sur Entrée"
+                     (keydown.enter)="addTag($event, 'fields')" [disabled]="fields.length >= 3">
+              <div class="tags mt-2">
+                <span *ngFor="let tag of fields; let i = index" class="badge bg-info text-dark me-1">
+                  {{ tag }}
+                  <button type="button" class="btn-close btn-close-dark btn-sm ms-1" (click)="removeTag(i, 'fields')"></button>
+                </span>
+              </div>
+            </div>
+
+            <!-- ✅ PROCESSUS DE SÉLECTION -->
+            <div class="mt-4">
+              <h5>Processus de Sélection</h5>
+
+              <div *ngFor="let step of steps; let i = index" class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Étape {{ i + 1 }}</span>
+                  <input class="form-control" type="text" [(ngModel)]="step.title" placeholder="ex: Entretien RH">
+                  <button class="btn btn-outline-danger" type="button" (click)="removeStep(i)">Supprimer</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-outline-primary mt-2" (click)="addStep()">+ Ajouter une étape</button>
+            </div>
+
+            <hr class="mt-4" />
+            <!--IMAGE -->
+             <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label>Upload project file</label>
+                    <dropzone [config]="config" [message]="text" [className]="'custom-drop-zone'"
+                      (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ SOUMISSION FINALE -->
+            <div class="text-end mt-4">
+              <button type="button" class="btn btn-secondary me-3" (click)="submitOffer()">Soumettre</button>
+              <button type="reset" class="btn btn-danger">Annuler</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

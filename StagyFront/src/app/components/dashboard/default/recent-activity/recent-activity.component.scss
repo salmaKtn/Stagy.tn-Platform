@@ -1,0 +1,62 @@
+/* Main card style */
+.realtime-card {
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.realtime-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header */
+.realtime-card .card-header {
+  background: linear-gradient(135deg, #4b154c, #865b94);
+  color: white;
+  padding: 1rem 1.5rem;
+}
+
+.realtime-card .card-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Body content layout */
+.realtime-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1.5rem;
+}
+
+/* Icon style */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #822788, #c9a6cb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Text style */
+.text-box h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.text-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}

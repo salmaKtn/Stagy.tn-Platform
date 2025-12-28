@@ -1,0 +1,50 @@
+.admin-offers-container {
+  .card-header.bg-admin {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .search-bar {
+    position: relative;
+    i {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      color: #6c757d;
+    }
+    input {
+      padding-left: 35px;
+    }
+  }
+
+  .status-filled {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .status-processing {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .status-no_applicants {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .comment-truncate {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .table {
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: #495057;
+    }
+  }
+}

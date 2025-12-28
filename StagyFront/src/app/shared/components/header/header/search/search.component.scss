@@ -1,0 +1,15 @@
+.search-bar-sm .form-control {
+  height: 35px;          /* hauteur plus petite */
+  font-size: 12px;       /* texte plus petit */
+  padding: 2px 6px;      /* moins d’espace interne */
+}
+
+.search-bar-sm .input-group-text {
+  padding: 2px 6px;      /* espace autour de l’icône réduit */
+  font-size: 12px;
+}
+
+.search-bar-sm svg {
+  width: 20px;           /* icône plus petite */
+  height: 20px;
+}

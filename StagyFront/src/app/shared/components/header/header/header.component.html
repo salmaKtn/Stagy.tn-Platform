@@ -1,0 +1,46 @@
+<div class="header-wrapper row m-0 align-items-center">
+  
+  <!-- Logo + toggle sidebar + About (gauche) -->
+  <div class="header-logo-wrapper col-auto p-0 d-flex align-items-center gap-3">
+    <div class="logo-wrapper d-flex align-items-center gap-1">
+    
+    </div>
+    <div class="toggle-sidebar ms-2" (click)="sidebarToggle()" style="cursor:pointer;">
+      <div class="status_toggle sidebar-toggle d-flex">
+        <svg-icon src="assets/svgIcon/menu.svg"></svg-icon>
+      </div>
+    </div>
+    <a href="/blog/add-post" class="about-btn d-none d-md-inline-block">
+      About
+    </a>
+  </div>
+  
+  <!-- Barre de recherche (centrée sur grand écran, cachée sur petit) -->
+  <div class="left-side-header col ps-0 d-none d-md-flex justify-content-center">
+    <app-search></app-search>
+  </div>
+
+  <!-- Logo principal centré en version desktop -->
+  <div class="col-auto d-none d-md-flex justify-content-center" style="flex-grow: 0; max-width: 300px;">
+    <img src="assets/images/logo/logoinner.png" alt="Logo principal" style="height: 80px; width: auto;">
+  </div>
+
+  <!-- Menus de droite -->
+  <div class="nav-right col-10 col-sm-6 pull-right right-header p-0">
+    <ul class="nav-menus d-flex align-items-center justify-content-end gap-2 mb-0">
+      <li class="mode">
+        <app-mode></app-mode>
+      </li>
+      <li class="d-md-none resp-serch-input">
+        <app-search-customize></app-search-customize>
+      </li>
+      <li class="onhover-dropdown">
+        <app-notification></app-notification>
+      </li>
+      <li class="profile-nav onhover-dropdown pe-0 py-0 me-0">
+        <app-account></app-account>
+      </li>
+    </ul>
+  </div>
+
+</div>

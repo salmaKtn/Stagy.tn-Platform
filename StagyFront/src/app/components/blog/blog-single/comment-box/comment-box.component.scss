@@ -1,0 +1,39 @@
+.academic-projects {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(82, 24, 105, 0.08); // subtle purple shadow
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+
+  .section-title {
+    color: #521869; // $primary-color
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #c2bf06; // $secondary-color
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .projects-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      color: #2c3e50; // dark text color
+
+      strong {
+        color: #521869;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      br {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}

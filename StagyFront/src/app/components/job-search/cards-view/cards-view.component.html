@@ -1,0 +1,153 @@
+<app-breadcrumb [active_item]="'Explorer'"></app-breadcrumb>
+
+<div class="container-fluid filter-page">
+  <div class="row">
+
+    <!-- Filtre (gauche) -->
+    <div class="col-xl-3 xl-40 box-col-5">
+      <app-job-filter></app-job-filter>
+    </div>
+
+    <!-- Cartes d'offres (droite) -->
+    <div class="col-xl-9 xl-60 box-col-7">
+      <div class="row">
+
+        <!-- Offre 1 -->
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+                 <img class="img-40 img-fluid m-r-20" 
+     [src]="'assets/images/job-search/2.jpg'" 
+     alt="Icone emploi">
+
+                  <div class="media-body">
+                    <h6 class="f-w-600 d-flex align-items-center gap-2">
+                      <a [routerLink]="['/e-commerce/product-page/1']">Développeur Web Front-End</a>
+                      <span class="badge badge-pfe">PFE</span>
+                    </h6>
+                    <p><strong>Entreprise :</strong> softsquareIT</p>
+                    <p><strong>Localisation :</strong> Tunisie</p>
+                  </div>
+                </div>
+                <p><strong>Durée :</strong> 5 mois</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Offre 2 -->
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+                 <img class="img-40 img-fluid m-r-20" 
+     [src]="'assets/images/job-search/4.jpg'" 
+     alt="Icone emploi">
+
+                  <div class="media-body">
+                    <h6 class="f-w-600 d-flex align-items-center gap-2">
+                      <a [routerLink]="['/e-commerce/product-page/1']">Assistant Marketing Digital</a>
+                      <span class="badge badge-ete">Été</span>
+                    </h6>
+                    <p><strong>Entreprise :</strong> Marketing Plus</p>
+                    <p><strong>Localisation :</strong> Sfax</p>
+                  </div>
+                </div>
+                <p><strong>Durée :</strong> 2 mois</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Offre 3 -->
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+                 <img class="img-40 img-fluid m-r-20" 
+     [src]="'assets/images/job-search/6.jpg'" 
+     alt="Icone emploi">
+
+                  <div class="media-body">
+                    <h6 class="f-w-600 d-flex align-items-center gap-2">
+                      <a [routerLink]="['/e-commerce/product-page/1']">Technicien Support Informatique</a>
+                      <span class="badge badge-ouvrier">Ouvrier</span>
+                    </h6>
+                    <p><strong>Entreprise :</strong> InfoTech</p>
+                    <p><strong>Localisation :</strong> Sousse</p>
+                  </div>
+                </div>
+                <p><strong>Durée :</strong> 3 mois</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Offre 4 -->
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+                  <img class="img-40 img-fluid m-r-20" 
+     [src]="'assets/images/job-search/2.jpg'" 
+     alt="Icone emploi">
+
+                  <div class="media-body">
+                    <h6 class="f-w-600 d-flex align-items-center gap-2">
+                      <a [routerLink]="['/e-commerce/product-page/1']">Stagiaire en Communication</a>
+                      <span class="badge badge-decouverte">Découverte</span>
+                    </h6>
+                    <p><strong>Entreprise :</strong> Com&Co</p>
+                    <p><strong>Localisation :</strong> Monastir</p>
+                  </div>
+                </div>
+                <p><strong>Durée :</strong> 1 mois</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Offre 5 -->
+        <div class="col-xl-6 xl-100 box-col-12">
+          <div class="card">
+
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media">
+<img class="img-40 img-fluid m-r-20" 
+     [src]="'assets/images/job-search/1.jpg'" 
+     alt="Icone emploi">
+                  <div class="media-body">
+                    <h6 class="f-w-600 d-flex align-items-center gap-2">
+                      <a [routerLink]="['/e-commerce/product-page/1']">Assistant Administratif</a>
+                      <span class="badge badge-preembauche">Pré-embauche</span>
+                    </h6>
+                    <p><strong>Entreprise :</strong> Admin Services</p>
+                    <p><strong>Localisation :</strong> Ariana</p>
+                  </div>
+                </div>
+                <p><strong>Durée :</strong> 4 mois</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

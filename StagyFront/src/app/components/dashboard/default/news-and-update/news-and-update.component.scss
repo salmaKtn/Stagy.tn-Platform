@@ -1,0 +1,71 @@
+/* Main card style */
+.news-update-card {
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.news-update-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Header */
+.news-update-card .card-header {
+  background: linear-gradient(135deg, #903e9e, #761a65); /* green gradient */
+  color: white;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Body content layout */
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1.5rem;
+}
+
+/* Icon style */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #80577b, #5e2265);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
+  transition: background 0.3s ease;
+}
+
+.news-update-card:hover .icon-box {
+  background: linear-gradient(135deg, #560956, #792479);
+  box-shadow: 0 4px 12px rgba(76, 11, 72, 0.6);
+}
+
+/* Text style */
+.text-box h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.text-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  user-select: none;
+}

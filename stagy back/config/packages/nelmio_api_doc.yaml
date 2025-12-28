@@ -1,0 +1,298 @@
+
+
+
+nelmio_api_doc:
+    models: { use_jms: false }
+    documentation:
+        info:
+            title: Backend
+            description: This is an awesome app!
+            version: 1.0.0
+        
+        
+        security:
+            - Bearer: []    
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+            schemas:
+                SectionEntry:
+                    type: object
+                    properties:
+                        type:
+                            type: string
+                            example: "experience"
+                        title:
+                            type: string
+                            example: "Software Intern"
+                        description:
+                            type: string
+                            example: "Worked on backend development using Symfony."
+                        startDate:
+                            type: string
+                            format: date
+                            example: "2023-06-01"
+                        endDate:
+                            type: string
+                            format: date
+                            example: "2023-08-31"
+                        cv:
+                            type: integer
+                            example: 1
+                RegisterStudent:
+                    type: object
+                    required: [username, password]
+                    properties:
+                        id:
+                            description: identifier
+                            type: integer
+                            example: 1
+                        username:
+                            type: string
+                            description: Unique login username
+                            example: john_doe123
+                            minLength: 3
+                            maxLength: 30
+                        password:
+                            type: string
+                            description: Password must be at least 8 characters with 1 uppercase and 1 number
+                            example: SecurePass123
+                            minLength: 8
+                        firstName:
+                            type: string
+                            description: Student's first name
+                            example: John
+                            maxLength: 255
+                            nullable: true
+                        lastName:
+                            type: string
+                            description: Student's last name
+                            example: Doe
+                            maxLength: 255
+                            nullable: true
+                        level:
+                            type: string
+                            description: Academic level (e.g., Bachelor, Master, PhD)
+                            example: Bachelor
+                            maxLength: 255
+                            nullable: true
+                        fieldOfStudy:
+                            type: string
+                            description: Field of study
+                            example: Computer Science
+                            maxLength: 255
+                            nullable: true
+                        gender:
+                            type: string
+                            description: Gender identity
+                            example: male
+                            enum: [male, female]
+                            nullable: true
+                        email:
+                            type: string
+                            format: email
+                            description: Contact email address
+                            example: john.doe@example.com
+                            maxLength: 255
+                            nullable: true
+                        phoneNumber:
+                            type: string
+                            description: Phone number in international format
+                            example: "+1234567890"
+                            maxLength: 20
+                            nullable: true
+                        URLs:
+                            type: array
+                            description: Array of personal URLs (portfolio, LinkedIn, etc.)
+                            items:
+                                type: string
+                                example: https://linkedin.com/in/johndoe
+                            nullable: true
+                        cvFile:
+                            type: string
+                            description: Path to uploaded CV file
+                            example: "/uploads/cvs/john_doe_resume.pdf"
+                            nullable: true
+                        picture:
+                            type: string
+                            description: picture URL
+                            example: "/uploads/cvs/john_doe_resume.jpeg"
+                            nullable: true   
+
+                RegisterCompany:
+                    type: object
+                    required: [username, password, name]
+                    properties:
+                        id:
+                            type: string
+                            description: identifier
+                            example: 1
+                        username:
+                            type: string
+                            description: Unique login username for the company representative
+                            example: company_admin123
+                            minLength: 3
+                            maxLength: 180
+                        password:
+                            type: string
+                            description: Password must contain at least 8 characters, 1 uppercase letter and 1 number
+                            example: SecurePass123
+                            minLength: 8
+                        name:
+                            type: string
+                            description: Official company name
+                            example: Tech Solutions Inc.
+                            maxLength: 255
+                        location:
+                            type: string
+                            description: Company headquarters location
+                            example: New York, USA
+                            maxLength: 255
+                            nullable: true
+                        logoURL:
+                            type: string
+                            format: url
+                            description: URL to company logo image
+                            example: https://example.com/logo.png
+                            nullable: true
+                        coverURL:
+                            type: string
+                            format: url
+                            description: URL to company cover image
+                            example: https://example.com/cover.jpg
+                            nullable: true
+                        slogan:
+                            type: string
+                            description: Company slogan or tagline
+                            example: Innovating the future
+                            maxLength: 255
+                            nullable: true
+                        about:
+                            type: string
+                            description: Detailed description about the company
+                            example: A leading tech company specializing in AI solutions...
+                            nullable: true
+                        socialMediaURLs:
+                            type: array
+                            description: Array of company social media URLs
+                            items:
+                                type: string
+                                example: https://linkedin.com/company/tech-solutions
+                            nullable: true
+                        field:
+                            type: string
+                            description: Company's main business field/industry
+                            example: Information Technology
+                            maxLength: 255
+                            nullable: true
+                        taxNumber:
+                            type: integer
+                            description: Company tax identification number
+                            example: 123456789
+                            nullable: true
+                        agentName:
+                            type: string
+                            description: First name of company representative/agent
+                            example: John
+                            maxLength: 255
+                            nullable: true
+                        agentLastname:
+                            type: string
+                            description: Last name of company representative/agent
+                            example: Smith
+                            maxLength: 255
+                            nullable: true
+                        agentEmail:
+                            type: string
+                            format: email
+                            description: Email of company representative/agent
+                            example: john.smith@company.com
+                            maxLength: 255
+                            nullable: true
+                        validation:
+                            type: boolean
+                            description: Company validation status (set by admin)
+                            example: false
+                            nullable: true
+   
+                    
+        
+        paths:
+            /api/login-check:
+                post:
+                    tags:
+                        - Authentication
+                    summary: Login
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    properties:
+                                        username:
+                                            type: string
+                                        password:
+                                            type: string
+                                    type: object
+                    responses:
+                        '200':
+                            description: OK
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            token:
+                                                type: string
+                                            refresh_token:
+                                                type: string
+                        '401':
+                            description: Invalid credentials
+                        '400':
+                            description: Invalid JSON.
+                    security: []
+            /api/token/refresh:
+                post:
+                    tags:
+                        - Authentication
+                    summary: Refresh token
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    properties:
+                                        refresh_token:
+                                            type: string
+                                    type: object
+                    responses:
+                        '200':
+                            description: OK
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            token:
+                                                type: string
+                                            refresh_token:
+                                                type: string
+                        '401':
+                            description: An authentication exception occurred.
+                    security: []
+            /api/register:
+                    security: []
+                    
+        
+            
+            
+                                                        
+            
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/_profiler$)
+    #enable_openapi_attributes: true        
+            
+
+

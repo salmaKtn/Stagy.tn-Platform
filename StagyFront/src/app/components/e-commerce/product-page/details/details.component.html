@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body">
+
+    <!-- Bouton Postuler visible uniquement aux étudiants -->
+    <a class="btn btn-primary mb-4" *ngIf="userRole === 'ROLE_STUDENT'" (click)="applyToOffer(successModal)" style="background-color: #007bff; border-color: #007bff;">
+      <i class="fa fa-paper-plane me-2"></i>Postuler
+    </a>
+
+    <!-- Description détaillée -->
+    <div class="pro-group mb-4">
+      <h5>Description du poste</h5>
+      <p>
+        Rejoignez une équipe dynamique pour concevoir et développer des interfaces web front-end modernes et performantes. 
+        Vous aurez pour mission de créer des expériences utilisateur intuitives, responsives et optimisées, en étroite collaboration avec les équipes design et back-end.
+      </p>
+    </div>
+
+    <div class="pro-group">
+      <h5>Rôles et responsabilités</h5>
+      <ul>
+        <li>Conception et développement d’interfaces utilisateur élégantes et adaptées à tous les écrans.</li>
+        <li>Optimisation des performances pour garantir une navigation fluide et rapide.</li>
+        <li>Assurer la compatibilité multi-navigateurs et la maintenance du code.</li>
+        <li>Collaborer activement avec les designers et développeurs back-end pour intégrer les fonctionnalités.</li>
+        <li>Réaliser les tests et corriger les anomalies détectées.</li>
+      </ul>
+    </div>
+
+    <!-- Modal de succès -->
+    <ng-template #successModal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Succès</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Votre candidature a été envoyée avec succès !</p>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

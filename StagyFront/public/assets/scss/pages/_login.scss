@@ -1,0 +1,131 @@
+$primary-color: #521869;
+$secondary-color: #8c8a27;
+$modal-bg: #fafafa;
+$modal-shadow: rgba(0, 0, 0, 0.07);
+
+/* Overlay */
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); // softer backdrop
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Modal container */
+.auth-modal {
+  background: $modal-bg;
+  padding: 1.8rem 1.6rem;
+  border-radius: 10px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 8px 16px $modal-shadow;
+  transform: translateY(-12px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  position: relative;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close button */
+.auth-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: lighten($primary-color, 15%);
+  }
+}
+
+/* Titles */
+.auth-modal h4.auth-modal-title {
+  margin-bottom: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.auth-modal h6.auth-modal-subtitle {
+  margin-bottom: 1.2rem;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Form rows */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row > .form-group {
+  flex: 1 1 45%;
+}
+
+.auth-modal form .form-group {
+  margin-bottom: 0.9rem;
+}
+
+/* Inputs */
+.auth-modal form .form-control {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.25);
+    outline: none;
+  }
+}
+
+/* Password toggle */
+.auth-modal .show-hide {
+  font-size: 0.85rem;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: $primary-color;
+}
+
+/* Background container */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 4em;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+}

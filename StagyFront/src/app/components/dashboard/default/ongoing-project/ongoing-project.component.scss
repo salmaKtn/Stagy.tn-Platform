@@ -1,0 +1,65 @@
+/* Main card style */
+.conventions-card {
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.conventions-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header */
+.conventions-card .card-header {
+  background: linear-gradient(135deg, #662776, #6a586b);
+  color: white;
+  padding: 1rem 1.5rem;
+}
+
+.conventions-card .card-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Body content layout */
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1.5rem;
+}
+
+/* Icon style */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.bg-warning-gradient {
+  background: linear-gradient(135deg, #8d4d98, #391646);
+}
+
+/* Text style */
+.text-box h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.text-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}

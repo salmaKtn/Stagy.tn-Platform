@@ -1,0 +1,61 @@
+<app-breadcrumb [title]="'Demandes des entreprises'" [items]="['Pages']" [active_item]="'Demandes des entreprises'"></app-breadcrumb>
+
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5>Demandes de validation des entreprises</h5>
+          <span>Gérez les demandes de validation des entreprises</span>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Nom de l’entreprise</th>
+                <th>Email</th>
+                <th>Numéro de TVA</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let demande of demandes">
+                <td>{{ demande.nom }}</td>
+                <td>{{ demande.email }}</td>
+                <td>{{ demande.tva }}</td>
+                <td>
+                  <button (click)="ouvrirModal(demande, 'approuver')" class="btn btn-success btn-sm me-1">Approuver</button>
+                  <button (click)="ouvrirModal(demande, 'rejeter')" class="btn btn-danger btn-sm">Rejeter</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap native modal -->
+<div class="modal fade" tabindex="-1" role="dialog" #confirmationModal>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" [ngClass]="{'bg-success text-white': actionType==='approuver', 'bg-danger text-white': actionType==='rejeter'}">
+        <h5 class="modal-title">
+          {{ actionType === 'approuver' ? 'Confirmer l’approbation' : 'Confirmer le rejet' }}
+        </h5>
+        <button type="button" class="btn-close" aria-label="Fermer" (click)="fermerModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Voulez-vous vraiment
+          {{ actionType === 'approuver' ? 'approuver' : 'rejeter' }}
+          la demande pour <strong>{{ selectedDemande?.nom }}</strong> ?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fermerModal()">Annuler</button>
+        <button type="button" class="btn" [ngClass]="{'btn-success': actionType==='approuver', 'btn-danger': actionType==='rejeter'}" (click)="confirmerAction()">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>

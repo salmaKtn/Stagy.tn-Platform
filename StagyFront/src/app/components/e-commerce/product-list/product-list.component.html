@@ -1,0 +1,92 @@
+<app-breadcrumb [title]="'Applications'" [items]="['Company']" [active_item]="'Applications'"></app-breadcrumb>
+
+<div class="container-fluid list-products">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header pb-0">
+          <!-- You can add search/filter here -->
+          <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" />
+        </div>
+
+        <div class="card-body">
+          <div *ngFor="let group of groupedApplications" class="mb-4">
+            <h4 class="mb-3 border-bottom pb-2">{{ group.offer_title }}</h4>
+
+            <div class="table-responsive product-table">
+              <table class="table table-hover align-middle table-striped">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Timestamp</th>
+                    <th scope="col">Compatibility</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let app of group.applications ">
+                    <td>
+                      <img
+                        [src]="app.student_picture"
+                        alt="Profile"
+                        class="rounded-circle border"
+                        width="48"
+                        height="48"
+                      />
+                    </td>
+
+                    <td>
+                      <h6 class="mb-0 fw-bold">
+                        {{ app.student_name }}
+                        <span *ngIf="app.isTop3" class="badge bg-warning text-dark ms-2">TOP 3</span>
+                      </h6>
+                      <small class="text-muted">{{ app.student_level }}</small>
+                    </td>
+
+                    <td>
+                      <small class="text-secondary">{{ app.timestamp }}</small>
+                    </td>
+
+                    <td
+                      [ngClass]="{
+                        'text-success fw-bold': app.student_compatibility > 0.7,
+                        'text-warning fw-bold':
+                          app.student_compatibility > 0.4 && app.student_compatibility <= 0.7,
+                        'text-danger fw-bold': app.student_compatibility <= 0.4
+                      }"
+                    >
+                      {{ app.student_compatibility | number : '1.1-2' }}
+                    </td>
+
+                    <td>
+                      <select
+                        class="form-select form-select-sm"
+                        [(ngModel)]="app.status"
+                        (change)="changeStatus(app.id, app.status)"
+                        [ngClass]="{
+                          'bg-warning text-dark': app.status === 'Pending',
+                          'bg-success text-white': app.status === 'Approved',
+                          'bg-info text-dark': app.status === 'In Process',
+                          'bg-danger text-white': app.status === 'Rejected'
+                        }"
+                      >
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="In Process">In Process</option>
+                        <option value="Rejected">Rejected</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Pagination controls could go here if needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

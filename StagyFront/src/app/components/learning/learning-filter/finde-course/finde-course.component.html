@@ -1,0 +1,76 @@
+<div class="card cv-contact-card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <button class="btn btn-link d-flex align-items-center" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="cvContactCollapse">
+        <i data-feather="user" class="me-2"></i> Contact Information
+      </button>
+    </h5>
+  </div>
+  
+  <div class="collapse show" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" id="cvContactCollapse">
+    <div class="card-body p-0">
+      <!-- Enhanced Profile Picture Section -->
+      
+        <div class="profile-header">
+  <div class="profile-pic-container">
+    <img src="/assets/images/user.jpeg" alt="Profile Picture" class="profile-pic">
+  </div>
+  <div class="profile-info">
+    <h4 class="profile-name">Salma Koutini</h4>
+    <h6 class="profile-title">Business Intelligence Student</h6>
+  </div>
+</div>
+      
+      <!-- Contact Content -->
+      <div class="contact-content p-4">
+ 
+
+        <!-- Contact Fields -->
+        <div class="contact-fields">
+          <div class="contact-field">
+            <i data-feather="mail" class="contact-icon"></i>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">salma.example.com</div>
+            </div>
+            <button class="copy-btn" title="Copy email">
+              <i data-feather="copy" width="14"></i>
+            </button>
+          </div>
+          
+          <div class="contact-field">
+            <i data-feather="phone" class="contact-icon"></i>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+216 12 345 678</div>
+            </div>
+          </div>
+          
+          <div class="contact-field">
+            <i data-feather="map-pin" class="contact-icon"></i>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Tunis, Tunisia</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links mt-4">
+          <a href="#" class="social-link">
+            <i data-feather="github"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i data-feather="linkedin"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i data-feather="twitter"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i data-feather="globe"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

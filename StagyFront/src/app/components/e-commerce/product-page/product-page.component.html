@@ -1,0 +1,30 @@
+<app-breadcrumb  [items]="['Explorer']" [active_item]="'Détail Offre'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row product-page-main p-0">
+    <!-- Colonne image uniquement -->
+    <div class="col-xl-5 col-md-6 box-col-6 xl-50">
+      <div class="card">
+        <div class="card-body text-center">
+          <img src="assets/images/webdev.jpeg" alt="Image de l'offre" class="img-fluid w-100" />
+           
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne détails -->
+    <div class="col-xl-5 box-col-12 proorder-xl-3 xl-100">
+      <app-details></app-details>
+    </div>
+
+    <!-- Colonne marque -->
+    <div class="col-xl-2 col-md-6 box-col-6 xl-50 proorder-lg-1">
+      <app-brand></app-brand>
+    </div>
+  </div>
+
+  <!-- Description tab -->
+  <div class="card mt-3">
+    <app-description-tab></app-description-tab>
+  </div>
+</div>

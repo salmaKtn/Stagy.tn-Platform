@@ -1,0 +1,56 @@
+$primary-color:rgb(79, 14, 106);
+$secondary-color:rgb(140, 140, 18);
+.cv-skills-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background: white;
+
+  .card-header {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    .btn-link {
+      color: #2c3e50;
+      font-weight: 600;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      font-size: 1.25rem;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .skills-list {
+    padding: 1.5rem 2rem;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    .skill-category {
+      margin-bottom: 1.25rem;
+
+      h6 {
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 0.3rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.03em;
+      }
+
+      p {
+        margin: 0;
+        color: #444;
+        font-weight: 400;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+  }
+}

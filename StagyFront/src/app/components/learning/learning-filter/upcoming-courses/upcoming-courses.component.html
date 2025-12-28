@@ -1,0 +1,56 @@
+<div class="cv-upcoming-card card">
+  <div class="card-header">
+    <h5 class="mb-0 p-0">
+      <button class="btn btn-link" (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3"
+        aria-controls="collapseCourses">Autres</button>
+    </h5>
+  </div>
+
+  <div class="collapse show" #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3" id="collapseCourses">
+    <div class="upcoming-course card-body">
+      <div *ngFor="let course of upcomingCourses; trackBy: trackByCourse">
+        <div class="media course-item">
+          <div class="media-body">
+            <h5 class="course-title">{{ course.title }}</h5>
+            <p class="mb-1">Course By <a href="#">{{ course.courseBy }}</a></p>
+            <ngb-rating [rate]="course.rating" [readonly]="true"></ngb-rating>
+          </div>
+          <div class="course-date">
+            <h5 class="mb-0 font-primary">{{ course.date }}</h5>
+            <span>{{ course.month }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="additional-info">
+      <div class="info-section">
+        <h6>Langues</h6>
+        <p>Bon niveau oral et écrit:</p>
+        <ul>
+          <li>Arabe</li>
+          <li>Français</li>
+          <li>Anglais</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h6>Certifications</h6>
+        <ul>
+          <li>Coursera: Supervised Machine Learning</li>
+          <li>AIESEC Membership: Achievement certificate</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h6>Intérêts</h6>
+        <ul>
+          <li>Recherche</li>
+          <li>Design Graphique, peinture</li>
+          <li>Sports</li>
+          <li>Access Microscholarship Program</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
